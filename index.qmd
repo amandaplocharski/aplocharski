@@ -1,0 +1,37 @@
+---
+title: "Amanda Plocharski"
+about:
+  template: jolla
+  image: IMG_9674.JPG
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com/Aplo177
+    - icon: github
+      text: Github
+      href: https://github.com/amandaplocharski
+---
+
+Hi, I'm Amanda and I am a student at The George Washington University. I am currently pursuing a BA in journalism and mass communication with minors in political science and criminal justice.
+
+## Education
+
+The George Washington University
+
+Central Bucks High School East
+
+## Work Experience
+
+Communications Fellow at Feldman Strategies \|\| June 2022 - Present
+
+Video Editor at The GW Hatchet \|\| February 2020 - Present
+
+Communications Associate at The George Washington University \|\| January 2021 - May 2022
+
+## Skills
+
+Adobe Premiere Pro
+
+Writing and reporting
+
+Knowledge of AP Style
