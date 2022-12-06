@@ -1,0 +1,92 @@
+---
+title: "Analysis Walkthrough"
+author: "Amanda Plocharski"
+format:
+  html:
+    self-contained: true
+    code-fold: true
+    code-tools: true
+---
+
+
+We are going to be looking at some data on Trump's first impeachment in 2020. The data indicates whether or not the House member publicly called for the impeachment. We'll start out by loading our libraries.
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+
+Here is where we will load our impeachment data. 
+
+```{r}
+impeach <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRh8d5JaDqBtByzNw2JZF3idaACobDhhk-p7chJoktA0HawELHFOvjQOqCpzGA4MGONvPlR7GASqW-K/pub?gid=1765341510&single=true&output=csv")
+```
+
+These next few questins will deal with grouping. We will first take a look at how many members in the dataset did not favor impeachment come from districts with a GDP that is above the national figure versus below. 
+```{r}
+
+impeach %>% 
+  group_by(for_impeachment) %>% 
+  filter(for_impeachment == "NO", gdp_above_national == "ABOVE")%>%
+  summarise(n())
+
+impeach %>% 
+  group_by(for_impeachment) %>% 
+  filter(for_impeachment == "NO", gdp_above_national == "BELOW")%>%
+  summarise(n())
+```
+
+Still using grouping, we are breaking down the members of Congress by two measures: those who are for or against impeachment and districts above/below national GDP.
+```{r}
+
+impeach %>% 
+  group_by(for_impeachment)%>%
+  count(for_impeachment, gdp_above_national)
+```
+
+Similar to the code above, we are now looking at the national average percent of college graduates instead of GDP.
+```{r}
+
+impeach %>% 
+  group_by(for_impeachment)%>%
+  count(for_impeachment, pct_bachelors_compared_to_national)
+```
+
+Now, instead of showing the above/below national average counts for those for or 
+against impeachment, we are now finding the combined MEAN percentage of college
+grads for districts that are Yes for impeachment vs. No. 
+```{r}
+
+  impeach %>% 
+    filter(for_impeachment == "YES") %>% 
+    group_by(for_impeachment) %>% 
+    summarise(college_grad = mean(pct_bachelors)) %>% 
+    arrange(desc(college_grad))
+```
+
+Similar to above, we are now looking at the combined mean percentage of 
+the vote that Donald Trump received for districts that are Yes for impeachment vs. No
+```{r}
+ impeach %>% 
+    filter(for_impeachment == "YES") %>% 
+    group_by(for_impeachment) %>% 
+    summarise(average_vote = mean(trump_percent)) 
+ 
+ impeach %>% 
+   filter(for_impeachment == "NO") %>% 
+   group_by(for_impeachment) %>% 
+   summarise(average_vote = mean(trump_percent))
+```
+
+Finally, using filtering, we are now looking for the members who are a yes for impeachment, then of those, how many won their 2018 election by less than 5 percentage points (margin_flag_2018) vs. more.
+```{r}
+  impeach %>% 
+  group_by(for_impeachment)%>%
+  filter(for_impeachment == "YES",
+          margin_flag_2018 == "5_points_or_less") 
+ 
+ impeach %>% 
+   group_by(for_impeachment)%>%
+   filter(for_impeachment == "YES",
+          margin_flag_2018 == "more_than_5_points")
+```
+

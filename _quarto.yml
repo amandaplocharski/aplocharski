@@ -4,18 +4,27 @@ project:
 
 website:
   title: "mywesbitenew"
+  page-footer: 
+     left: "Copyright 2022, Amanda Plocharski" 
+     right: 
+       - icon: github
+         href: https://github.com/
+       - icon: twitter 
+         href: https://twitter.com/
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-      - portfolio.qmd
+     left:
+       - href: index.qmd
+         text: Home
+       - about.qmd
+       - portfolio.qmd
+       - analysis.qmd
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+
 
 
 
