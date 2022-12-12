@@ -18,6 +18,7 @@ website:
        - about.qmd
        - portfolio.qmd
        - analysis.qmd
+       - academic_example.qmd
 
 format:
   html:
