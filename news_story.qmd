@@ -1,0 +1,53 @@
+---
+title: "News Story Example"
+author: "Amanda Plocharski"
+format:
+  html:
+    self-contained: true
+    code-fold: true
+    code-tools: true
+---
+
+## Advocates, local leaders talk bike safety in D.C.
+
+In 2019, Dave Salovesh was riding his bike on a stretch of Florida Ave. in Northeast D.C. when he was struck and killed by a driver of a stolen van. For years before the incident, a bill had been sitting on the mayor\'s desk asking to build a protected bike lane on that exact street.
+
+Two years later, D.C. bike safety advocate Rachel Maisler found herself at a memorial bike ride for a fellow D.C. bike rider. Jim Pagels had been killed while riding on Massachusetts Ave., [tweeting](https://twitter.com/jimpagels/status/1380578057598214149) only hours before about how unsafe the bike lanes in the District are. He is the [twelfth](https://www.wusa9.com/article/news/local/dc/jim-pegels-memorial-ride-dc-cyclists-remember-rider-killed/65-8ef54763-e959-41e5-a71d-1b8c54305f38) person to die in a traffic-related incident in 2021 so far.
+
+\"I\'ve been hit by drivers twice while biking in D.C.,\" Maisler said. \"In the grand scheme of being hit by drivers, knock on wood, I\'m super lucky, but it\'s still enough to highlight how unsafe the infrastructure is and how unsafe drivers are for bicyclists in D.C.\"
+
+Maisler, chair and Ward 4 representative for the D.C. Bicycle Association Committee (BAC), said that over half the city council representatives have been advocates for bike safety, but that Mayor Bowser has not been doing enough. The only times bills get passed is when someone dies.
+
+\"If a white male, who is some sort of advocate gets killed, then maybe we get something, because that\'s how we got the Florida Ave. bike lane,\" Maisler said. \"That\'s not how I want it to be built. I just don\'t want to lose my friends in the first place.\"
+
+Traffic safety remains an issue for more than just bikers. Only a week before Pagels was killed, a vigil was held for four-year-old Zyaire Joshua who was [struck and killed](https://mpdc.dc.gov/release/traffic-fatality-intersection-georgia-avenue-and-kennedy-street-northwest) at an intersection by Georgia Ave. and Kennedy St., Northwest. This was one of [four](https://washingtoncitypaper.com/article/514203/there-have-been-four-traffic-fatalities-in-nine-days/) traffic-related fatalities over the span of only nine days. 
+
+The District Department of Transportation (DDOT) has built new protected bike lanes over the course of the pandemic, but they are not connected to each other, Maisler said. Lanes end off and dump bicyclists onto major streets that have no protection for either bicyclists or pedestrians.
+
+Marking a designated bike lane with white lines of paint provides only a symbolic barrier. Oftentimes, cars will obstruct access to the lanes, or will swerve into them to avoid other obstacles on the road, Maisler said. It is against the law in D.C. for cars to stop, stand or park in any bike lane, but it is not always followed. Disregarding this law may leave bikers with no choice but to swerve into oncoming traffic.
+
+A [study](https://www.youtube.com/watch?v=itvsdCwq8_o) conducted by WUSA9 found that the most dangerous set of streets lies within the U-street corridor in Northwest D.C., where over the course of three years, 68 cyclists and 65 pedestrians alone were hit by cars.
+
+As the current longest sitting BAC member, Ward 2 representative David Alexander has seen multiple bills pass through, just to sit on the desk of the mayor for years. One of those includes [Vision Zero](https://www.dcvisionzero.com/), an initiative that calls for zero traffic-related deaths and injuries by the year 2024. The opposite is happening, as traffic deaths increased by [40 percent](https://ggwash.org/view/81085/after-six-years-of-failure-its-time-to-start-over-on-vision-zero) last year, higher than the baseline set in 2015.
+
+At a Vision Zero Committee meeting on April 22, Alexander said that the BAC has \"no sway\" when it comes to bike safety laws.
+
+\"We, as the D.C. BAC when giving comments, within our jurisdiction, giving advice to D.C., we just don\'t have any sway,\" Alexander said. \"Unlike our friends at the ANC, for example, where the law provides that their opinions have to be given great weight ... there\'s no such thing in our arena.\"
+\
+In a non-pandemic year, Colin Browne, director of communications for the Washington Area Bicyclist Association (WABA), would bike to work every day. Moments of fear while speeding cars skimmed by his side while riding on the unprotected streets of the District are what drove him to join this organization. 
+
+\"Eighty percent of the actual pavement, if not only allowed for cars, is designed to move cars. So, everyone else is sort of on their own in that space,\" Browne said. \"In a city like D.C., only 60 percent of households own cars. There\'s a huge disconnect in terms of how people get around and how we allocate space.\"
+
+Through the nature of his job, Browne knows many people who have been hit by cars while walking or riding. These issues are urgent and have deadly consequences if not looked at immediately.
+
+\"If the city says, \'Oh yeah, we will make a plan to study this in four more years,\' that\'s hundreds and hundreds of people who are suffering life-changing trauma, getting killed,\" Browne said. \"Like, we\'re waiting to do a thing that we already know how to do.\"
+
+There are political risks that Mayor Bowser seems unwilling to take, Browne said. The challenges of providing protected pedestrian and bike lanes are not technical, but rather political.
+
+The [Eastern Downtown Project](https://www.dccycletrack.com/eastern-downtown) has been sitting on the desk of the mayor for four years. The project would add a protective bike lane on Sixth St. Northwest, but it faced heavy opposition from churches who are on that corridor, Browne said.
+
+\"That one, clearly politics,\" Browne said.
+
+Biking in D.C. is \"great\" and \"transformative\" if able to be done safely, Browne said. Some parts of the District are terrible, but focusing on improving that can improve the biking experience for everyone.
+
+\"If you are able to make it a way that you get around as a part of your daily life, it\'s absolutely transformative,\" Browne said. \"And I would just love for that to become available to more folks.\"

@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "mywesbitenew"
+  title: "Amanda Plocharski"
   page-footer: 
      left: "Copyright 2022, Amanda Plocharski" 
      right: 
@@ -19,6 +19,7 @@ website:
        - portfolio.qmd
        - analysis.qmd
        - academic_example.qmd
+       - news_story.qmd
 
 format:
   html:
