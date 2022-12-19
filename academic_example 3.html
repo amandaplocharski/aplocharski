@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Amanda Plocharski">
+
+<title>mywesbitenew - Academic Writing Example</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">mywesbitenew</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./portfolio.html">Portfolio</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./analysis.html">Analysis Walkthrough</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./academic_example.html" aria-current="page">Academic Writing Example</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#an-inquiry-into-the-philadelphia-inquirer" id="toc-an-inquiry-into-the-philadelphia-inquirer" class="nav-link active" data-scroll-target="#an-inquiry-into-the-philadelphia-inquirer">An Inquiry into <em>The Philadelphia Inquirer</em></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Academic Writing Example</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Amanda Plocharski </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<p>This paper is a final project that I turned in for my Media History class during the fall 2021 semester. For this project, our class was told to research our hometown paper and dive into its history and impact on our local community. Being from right outside of Philadelphia, I choose to write on The Philadelphia Inquirer. I also reached out to and interviewed a reporter on the news team to supplement the writing piece.</p>
+<section id="an-inquiry-into-the-philadelphia-inquirer" class="level2">
+<h2 class="anchored" data-anchor-id="an-inquiry-into-the-philadelphia-inquirer">An Inquiry into <em>The Philadelphia Inquirer</em></h2>
+<p>In the everchanging city of Philadelphia, <em>The Philadelphia Inquirer</em> has been one of the only constants. Placed near the railroad tracks at Broad Street and Callowhill in Center City, this paper has faced immense change and challenges, but has stuck around to become one of the most well-known papers in the country. <em>The Inquirer</em> and its owners have evolved into a household name, and it has become a trusted source for both those inside and outside of the city limits. June 1, 1829 saw a sudden and hot summer in the former nation's capital, but it also saw the founding of what would soon become one of the oldest surviving daily newspapers in the United States<a href="#_ftn1">[1]</a>. Norvell and John R. Walker, dissatisfied with the fact that all other papers seemed to be loyal to the European class system, sought to publish a paper that was dedicated to Jeffersonian Democracy<a href="#_ftn2">[2]</a>. Their paper, originally named <em>The Pennsylvanian Inquirer</em>, was to stand in the interests of all the people. Norvell, former editor of the <em>Aurora &amp; Gazette</em>, was quoted saying:<br>
+<br>
+"In a free state, there should always be an inquirer asking on behalf of the people: 'Why was this done? Why is that necessary work not done? Why is that man put forward? Why is that lawproposed? Why? Why? Why?'"<a href="#_ftn3">[3]</a><br>
+</p>
+<p>Norvell and Walker looked to create a media legend in a city that already housed seven other outlets: <em>The Democratic Press, The Morning Journal, The Daily Courier, The United States Gazette, The National Gazette &amp; Literary Register, The American Daily Advertiser and</em> the <em>Aurora &amp; Gazette<a href="#_ftn4"><strong>[4]</strong></a></em>. Through various merges, however, <em>The Inquirer</em> can claim that it is the oldest daily newspaper in America, even though it was technically founded years after other papers<a href="#_ftn5">[5]</a>. <em>The Pennsylvania Packet</em> has its first issue dating back to Monday, October 28, 1771, and through different owners and various sells, this paper became housed under the same ownership as <em>The Inquirer<a href="#_ftn6"><strong>[6]</strong></a>.</em> Through time, owners decided to merge papers and ended up with <em>The Inquirer</em> as the face of their ownership.<br>
+The paper was under the ownership of Norvell and Walker for only six months when they sold it to Jesper Harding —- associate editor of the <em>United States Gazette</em> and the leading publisher of the Bible in the country<a href="#_ftn7">[7]</a>. His goal was to create a publishing powerhouse ­­—- a seemingly impossible feat that soon proved to be possible. By 1842, only 13 years after becoming owner, Harding had bought four of the competing newspapers in the city and merged them with <em>The Inquirer</em>: <em>The Daily Journal, The Morning Journal, The Daily Courier, The National Gazette and The Literary Register<a href="#_ftn8"><strong>[8]</strong></a></em>. The owner of <em>The</em> <em>Daily Courier</em>, James Gordon Bennett, would soon run off to New York and found the <em>New York Herald</em>. To keep up with the rising demand of news and the acquisition of more papers and readers, Harding built his own paper mill<a href="#_ftn9">[9]</a>. Under Harding, the paper also tried to stay true to its original political ties, but that feat was soon proven difficult. Their loyalty to the Democratic party shifted after President Andrew Jackson removed all funds from the Second Bank of the U.S. in 1833 —- a bank located in the heart of Philadelphia. After that, the paper backed the anti-Jackson wing of the Democratic party<a href="#_ftn10">[10]</a>.</p>
+<p>Following the retirement of Harding in 1860, his son, William Harding, fully took over <em>The Inquirer</em> after being a partner for a few years<a href="#_ftn11">[11]</a>. He brought immense changes to the paper within the first few years of ownership. Harding changed the paper's name from <em>The Pennsylvanian Inquirer</em> to <em>The Philadelphia Inquirer,</em> changed the circulation so that it went mostly to annual subscribers, cut the single-copy price from three cents to two cents and also established delivery routes for paper boys<a href="#_ftn12">[12]</a>. The paper was also one of the first in the nation to use a web fed rotary press, which allowed them to have printing on both sides of the paper<a href="#_ftn13">[13]</a>. Three years into his full ownership, the circulation for <em>The Inquirer</em> had risen from 7,000 to 70,000.</p>
+<p>Harding carried the paper through coverage in the Civil War, and the paper and its subsequent coverage proved to be huge during this time. Harding not only brought the news of the armies to readers, but he also sent <em>The Inquirer</em> to the armies<a href="#_ftn14">[14]</a>. When the government sought to tell their troops about new steps in the war, it asked <em>The Inquirer</em> to issue a special edition for its armies. Both sides of the war also read <em>The Inquirer</em> because they thought it and its reporters were the most objective<a href="#_ftn15">[15]</a>. The war also brought about one of the nation's all-time greatest battlefield journalists, Uriah Hunt Painter, who worked for <em>The Inquirer</em>. Painter was the one who correctly reported the Confederate win in the first Battle of Bull Run when other outlets falsely claimed a Union victory<a href="#_ftn16">[16]</a>. He became known to generals and other government officials and traveled across the country at the drop of a hat to report<a href="#_ftn17">[17]</a>.</p>
+<p>Harding held ownership of the paper until 1889 when it was sold to British-born James Elverson<a href="#_ftn18">[18]</a>. At this point in time, <em>The Inquirer</em> was just a memory of what it once was. Their reporting on the Civil War was a peak, but soon after the war ended their circulation dropped. Elverson purchased the paper with the intention of restoring an institution that he had admired, and he began by moving the paper into a new building with the most advanced printing resources<a href="#_ftn19">[19]</a>. Elverson was also the first publisher to run his entire pressroom by electricity. In 1889, he created a Sunday edition of the paper as well.</p>
+<p>After Elverson died, the paper was handed down to his son, James Elverson Jr.&nbsp;Under his ownership, <em>The Inquirer</em> increased its "political clout" in the very Republican commonwealth. The paper soon became known as the "Republican Bible of Pennsylvania"<a href="#_ftn20">[20]</a>. This was the time when <em>The Inquirer</em> was looking to keep pace with the so-called mechanical age. It began using motor trucks to transport its paper and started to implement color printing<a href="#_ftn21">[21]</a>. Elverson Jr.&nbsp;was also the editor to build and move the newspaper into the building that it currently resides in, and this building was heralded as the most modern and fully equipped newspaper plant in the world<a href="#_ftn22">[22]</a>.&nbsp; Elverson Jr.&nbsp;died of a heart attack in <em>The Inquirer</em> building in 1929, and it took the paper seven years to find a fully defined owner after his death<a href="#_ftn23">[23]</a>.</p>
+<p>The paper went through many owners before being bought by M.L. Annenberg for $12 million in 1936<a href="#_ftn24">[24]</a>. He was considered the first "well-known" boss after the seven years of iffy ownership. Under Annenberg, circulation climbed immensely. The daily circulation had risen to 345,422 and its Sunday circulation rose to 1,035,871 after only two years<a href="#_ftn25">[25]</a>. Annenberg, however, was soon charged with tax evasion and sent to prison. He maintained ownership until he died in 1942<a href="#_ftn26">[26]</a>. Walter Annenberg, his son, quickly took over. Under him, <em>The Inquirer</em> became the sole morning publication in the city, and they announced that they were becoming an editorially independent newspaper rather than a GOP-oriented one<a href="#_ftn27">[27]</a>. In 1951, they backed the Democratic candidates in the election for Philadelphia's new mayor. Today, the newspaper is considered to have more of a left-leaning slant, but just slightly. In 1969, President Richard Nixon appointed Annenberg to be the Ambassador to Britain, so he decided to sell the paper to Knight Newspapers Inc.<a href="#_ftn28">[28]</a>. They held ownership until 2014 when philanthropist H.F. "Gerry" Lenfest purchased <em>The Inquirer</em> and donated it to the Lenfest Institute for Journalism<a href="#_ftn29">[29]</a>. It is now the largest newspaper in the United States that operates as a public-benefit corporation.</p>
+<p>Justine McDaniel flew across the country seven years ago to begin her job at <em>The Inquirer.</em> As a California native, McDaniel saw the six-hour flight and cross-country relocation as nothing but an opportunity to start her dream job. She began her work as a suburban bureau reporter until quickly moving onto the policy team where she looked at different state policies in different areas. A few years after her hiring, she became a general assignment reporter where she covered a much wider range of topics. When the pandemic hit, she was one of the first people tapped to start working on the COVID-19 beat. Her first story came out in early January, right before it had arrived in the United States, and she has been working on it since.</p>
+<p>McDaniel acknowledged the dense history of Philadelphia as a city itself, but also of the paper.</p>
+<p>"I do think there’s such a strong Philadelphia culture. And, like, <em>The Inquirer</em>, you know, its history is part of that," she said. "So, I guess just learning about all of that, for me has been interesting and becoming part of that. And, you know, my work definitely helps make me feel part of that."</p>
+<p>McDaniel emphasized that the paper is so engrained into the community and also in the history of the city. There is importance, she said, in startups and smaller newspapers, but it is also important to keep papers alive, especially ones with an immense history.</p>
+<p>"I do feel really lucky to work somewhere where the name is so established in the community," she said. "And everyone knows <em>The Inquirer</em> and you know, it means that people understand what you’re doing a lot of the time when you reach out to them or whatever. So, I feel really lucky to work somewhere with so much, you know, weight behind it."</p>
+<p>With this established name and such rich history, McDaniel acknowledges that it makes her job easier to do. The trust that people have placed over the years into this institution makes them more willing to talk and more willing to be honest. If they trust the paper, they will trust that they will report the right way. In being around for so long it has created an open area of trust and importance in the community.</p>
+<p>"There’s definitely always a sense that I want to do right by the paper, because the paper is so important to me," she said. "It’s such a big, wonderful place with all its history."</p>
+<p>In being around for so long though, the paper has also had to deal with an immensely changing industry. From printing on only one side of the paper to going digital, almost 200 years of history means that this paper has had to adapt to a lot. In just her seven years of working with <em>The Inquirer</em>, McDaniel has even seen drastic changes to the website. The paper has changed the way it reaches its audience and also how it presents it content, and the way they write their headlines has even changed.</p>
+<p>"So, all of that kind of stuff, it’s in the forefront of everyone’s mind all the time. I think or at least mine, you know, when I’m working," McDaniel said. "It’s just kind of baked into what we do now. Rather than, you know, maybe in previous decades, it was more of like you have to think harder about it, maybe more of an afterthought. The situation was just so different."</p>
+<p>Adaption has taken place throughout its history by previous owners, by moving them into new state-of-the-art buildings or beginning to run their newsroom on full electricity, but there has been more adaptation done recently as well. The donation of <em>The Inquirer</em> to the Lenfest Institute placed both the paper and Philadelphia itself at the epicenter of a national effort to protect and transform local news in the digital age. They have also adapted to the financial hardships of keeping a paper running, as the Institute's work with <em>The Inquirer</em> is entirely supported by private philanthropy<a href="#_ftn30">[30]</a>.</p>
+<p>Adaptations within the paper not only came with just technological advances, but it also came in response to the increase in attention on social issues. When covering the Black Lives Matter protests in response to the murder of George Floyd, <em>Inquirer</em> reporter Inga Saffron wrote a column titled "Buildings Matter, Too" —- an apparent play on the BLM slogan<a href="#_ftn31">[31]</a>. There was outrage among both consumers and journalists within the newsroom and top editor at the time, Stan Wischnowski, stepped down soon after<a href="#_ftn32">[32]</a>. In response to this controversy, the paper has had to work on the inherent biases that come with a paper that has been around for so long and change the way they think of reporting. "<em>Inquirer</em> for All" was launched in response to the headline, and they have created resources, guides and tracking systems to attempt to make their work more accountable to Black, Indigenous and POC communities and journalists<a href="#_ftn33">[33]</a>. An Anti-Racist Workflow Guide was also created, and it offers a series of questions for reporters, editors and producers to consider at different points in the journalistic process. In the newsroom now, 61 percent of all newsroom positions were filled by individuals from BIPOC communities and 44 percent identified as women<a href="#_ftn34">[34]</a>.&nbsp;</p>
+<p>As a current 16-year resident of Pennsylvania, Lauren Plocharski has become a consistent reader of <em>The Inquirer</em>. The print edition used to be brought into her office and left in the break room, and that is when she would catch up on the news for the day.</p>
+<p>"It was an easy way to get my news, and I think once I started reading <em>The Inquirer</em>, it became one of the local news outlets I read consistently," she said. "Besides the very local paper, it was one of the only newspapers that people ever read, or even brought into the office."</p>
+<p>Plocharski had been a long-time resident of New Jersey before moving to a Philadelphia suburb in 2005 with her husband and two daughters. Before moving, she had read local Jersey papers and sometimes papers in New York. She still read their online versions, but it was easy to find a new paper to trust when making the move.</p>
+<p>"Everyone knows <em>The Inquirer</em>, some people back in New Jersey even read it," she said. "They also had some reporting on New Jersey news, so it gave a sense of that old part of my life too."</p>
+<p>Now, Plocharski finds herself clicking through their website almost daily while at work and home. For her more local news she reads the <em>Doylestown Patch</em>, which is based in her suburb, but she finds that <em>The Inquirer</em> has more in-depth and broad reporting —-&nbsp;most likely due to more expansive resources. Sometimes these city-based papers can get lost in the new journalism world that is filled with mega-outlets like FOX, CNN, AP and more, but to Plocharski, it is nice to see a paper survive for so long.<br>
+</p>
+<p><em>The Inquirer</em> has been the recipient of multiple awards and has produced both noteworthy stories and journalists. Under Harding, they covered the Mexican War, supported Millard Fillmore in his election and also advocated for the election of President Abraham Lincoln. Many of Charles Dickens' novels, including <em>Barnaby Rudge</em> and <em>Master Humphrey's Clock</em>, were also published for the first time in America under <em>The Inquirer</em>'s name<a href="#_ftn35">[35]</a>. Samuel Clemens, also better known as Mark Twain, was even a compositor in <em>The Inquirer</em>'s back shop for a few months in the early 1850s<a href="#_ftn36">[36]</a>. Edgar Allen Poe's "The Raven" was also published in the paper on February 15,1845, as he was a resident of Philadelphia<a href="#_ftn37">[37]</a>. In 1894, <em>The Inquirer</em> advocated for the paving of Broad Street. It soon happened, and it became one of the "world's finest boulevards"<a href="#_ftn38">[38]</a>. The paper also advocated for the return of a sailor to U.S. grounds so that he could be honored for his service. He was soon returned, and his coffin was placed beneath the Liberty Bell where he laid in state for 24 hours. This is said to be the nation's first tribute on such a scale to an enlisted man<a href="#_ftn39">[39]</a>.<br>
+</p>
+<p>During World War II, <em>The Inquirer</em> was represented in the fields by one of the war's most distinguished correspondents, Ivan H. "Cy" Peterman<a href="#_ftn40">[40]</a>. He walked with Allied forces through France and Germany and covered the early meetings on the United Nations when it was first formed. He had continual contact with generals and leaders of the UN made him a force to be reckoned with —- but it also game him an ego<a href="#_ftn41">[41]</a>. When he was asked to return to Philadelphia and go back to his sports column, he "balked" and left the paper<a href="#_ftn42">[42]</a>.<br>
+</p>
+<p>In 1979, The Three Mile Island nuclear reactor near Middletown, Pennsylvania partially melted down after there was a failure in one of the plant's sections. Eighty <em>Inquire</em> reporters, editors and photographers were put on the story, and they produced a 20,000-word account in five days that ran nine full pages in the Sunday paper<a href="#_ftn43">[43]</a>. This reporting won them a Pulitzer prize for local reporting. This story, however, was only one of 17 Pulitzers the paper won between the years of 1975 and 1990<a href="#_ftn44">[44]</a>. Since then, they have won three more, bringing their total to 20<a href="#_ftn45">[45]</a>.<br>
+</p>
+<p>Their award-winning is not just limited to Pulitzer's though, as <em>The Inquirer</em> has won more national journalism awards than any other newspaper in the country. Other awards include the Roy W. Howard Award, the Ernie Pyle Memorial Award, the University of Missouri Medal, the Robert Kennedy Award for Photojournalism, the National Headliners Award, the Thomas L. Stokes Award, the George Polk Award, the Heywood Broun Award, the George Loeb Award and numerous awards in different categories from the Society of Profession Journalists<a href="#_ftn46">[46]</a>.<br>
+</p>
+<p>Through its rich and vast history, <em>The Inquirer</em> has proven itself to be a prominent and important institution. It has adapted to the changing journalism industry and is working to better itself in the changing climate. In its almost 200 years of existence, this paper has covered major events through U.S. History and has been a constant for the community members of Philadelphia and its surrounding suburbs. <em>The Inquirer</em> is an example of where good and trustworthy reporting can take a paper, and its leadership and drive has allowed it to thrive to the present time. &nbsp; _______________________________________________________________________________</p>
+<p>Citations:</p>
+<p><a href="#_ftnref1">[1]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref2">[2]</a> ibid</p>
+<p><a href="#_ftnref3">[3]</a> ibid</p>
+<p><a href="#_ftnref4">[4]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref5">[5]</a> Wilkinson, Gerry. "The History of the Philadelphia Inquirer," The Philadelphia Press Association. DOA 12/10/2021 http://www.phillyppa.com/inquirer.html</p>
+<p><a href="#_ftnref6">[6]</a> ibid</p>
+<p><a href="#_ftnref7">[7]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref8">[8]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref9">[9]</a> ibid</p>
+<p><a href="#_ftnref10">[10]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref11">[11]</a> ibid</p>
+<p><a href="#_ftnref12">[12]</a> ibid</p>
+<p><a href="#_ftnref13">[13]</a> Wilkinson, Gerry. "The History of the Philadelphia Inquirer," The Philadelphia Press Association. DOA 12/10/2021 http://www.phillyppa.com/inquirer.html</p>
+<p><a href="#_ftnref14">[14]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref15">[15]</a> ibid</p>
+<p><a href="#_ftnref16">[16]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref17">[17]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref18">[18]</a> ibid</p>
+<p><a href="#_ftnref19">[19]</a> ibid</p>
+<p><a href="#_ftnref20">[20]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref21">[21]</a> ibid</p>
+<p><a href="#_ftnref22">[22]</a> Wilkinson, Gerry. "The History of the Philadelphia Inquirer," The Philadelphia Press Association. DOA 12/10/2021 http://www.phillyppa.com/inquirer.html</p>
+<p><a href="#_ftnref23">[23]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref24">[24]</a> Wilkinson, Gerry. "The History of the Philadelphia Inquirer," The Philadelphia Press Association. DOA 12/10/2021 http://www.phillyppa.com/inquirer.html</p>
+<p><a href="#_ftnref25">[25]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref26">[26]</a> ibid</p>
+<p><a href="#_ftnref27">[27]</a> ibid</p>
+<p><a href="#_ftnref28">[28]</a> Wilkinson, Gerry. "The History of the Philadelphia Inquirer," The Philadelphia Press Association. DOA 12/10/2021 http://www.phillyppa.com/inquirer.html</p>
+<p><a href="#_ftnref29">[29]</a> "The Philadelphia Inquirer," The Lenfest Institute. DOA 12/11/2021 https://www.lenfestinstitute.org/inquirer-support/</p>
+<p><a href="#_ftnref30">[30]</a> "The Philadelphia Inquirer," The Lenfest Institute. DOA 12/11/2021 https://www.lenfestinstitute.org/inquirer-support/</p>
+<p><a href="#_ftnref31">[31]</a> Wenzel, Andrea. "The Philadelphia Inquirer is working to transform its newsroom. Here's what it's done in a year," Poynter, August 27, 2021. DOA 12/10/2021 https://www.poynter.org/reporting-editing/2021/the-philadelphia-inquirer-is-working-to-transform-its-newsroom-heres-what-its-done-in-a-year/</p>
+<p><a href="#_ftnref32">[32]</a> Tracy, Marc. "Top Editor of Philadelphia Inquirer Resigns After 'Buildings Matter' Headline," The New York Times, June 6, 2020. DOA 12/11/2021 https://www.nytimes.com/2020/06/06/business/media/editor-philadephia-inquirer-resigns.html</p>
+<p><a href="#_ftnref33">[33]</a> Wenzel, Andrea. "The Philadelphia Inquirer is working to transform its newsroom. Here's what it's done in a year," Poynter, August 27, 2021. DOA 12/10/2021 https://www.poynter.org/reporting-editing/2021/the-philadelphia-inquirer-is-working-to-transform-its-newsroom-heres-what-its-done-in-a-year/</p>
+<p><a href="#_ftnref34">[34]</a> ibid</p>
+<p><a href="#_ftnref35">[35]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref36">[36]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref37">[37]</a> Wilkinson, Gerry. "The History of the Philadelphia Inquirer," The Philadelphia Press Association. DOA 12/10/2021 http://www.phillyppa.com/inquirer.html</p>
+<p><a href="#_ftnref38">[38]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref39">[39]</a> ibid</p>
+<p><a href="#_ftnref40">[40]</a> ibid</p>
+<p><a href="#_ftnref41">[41]</a> ibid</p>
+<p><a href="#_ftnref42">[42]</a> ibid</p>
+<p><a href="#_ftnref43">[43]</a> ibid</p>
+<p><a href="#_ftnref44">[44]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+<p><a href="#_ftnref45">[45]</a> "The Philadelphia Inquirer," Wikipedia. DOA 12/11/2021 https://en.wikipedia.org/wiki/The_Philadelphia_Inquirer</p>
+<p><a href="#_ftnref46">[46]</a> Williams, Edgar. "A history of The Inquirer," Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Academic Writing Example"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Amanda Plocharski"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This paper is a final project that I turned in for my Media History class during the fall 2021 semester. For this project, our class was told to research our hometown paper and dive into its history and impact on our local community. Being from right outside of Philadelphia, I choose to write on The Philadelphia Inquirer. I also reached out to and interviewed a reporter on the news team to supplement the writing piece.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## An Inquiry into *The Philadelphia Inquirer*</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>In the everchanging city of Philadelphia, *The Philadelphia Inquirer* has been one of the only constants. Placed near the railroad tracks at Broad Street and Callowhill in Center City, this paper has faced immense change and challenges, but has stuck around to become one of the most well-known papers in the country. *The Inquirer* and its owners have evolved into a household name, and it has become a trusted source for both those inside and outside of the city limits. June 1, 1829 saw a sudden and hot summer in the former nation\'s capital, but it also saw the founding of what would soon become one of the oldest surviving daily newspapers in the United States[\[1\]](#_ftn1). Norvell and John R. Walker, dissatisfied with the fact that all other papers seemed to be loyal to the European class system, sought to publish a paper that was dedicated to Jeffersonian Democracy[\[2\]](#_ftn2). Their paper, originally named *The Pennsylvanian Inquirer*, was to stand in the interests of all the people. Norvell, former editor of the *Aurora &amp; Gazette*, was quoted saying:\</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>\"In a free state, there should always be an inquirer asking on behalf of the people: \'Why was this done? Why is that necessary work not done? Why is that man put forward? Why is that lawproposed? Why? Why? Why?\'\"<span class="co">[</span><span class="ot">\[3\]</span><span class="co">](#_ftn3)</span>\</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Norvell and Walker looked to create a media legend in a city that already housed seven other outlets: *The Democratic Press, The Morning Journal, The Daily Courier, The United States Gazette, The National Gazette &amp; Literary Register, The American Daily Advertiser and* the *Aurora &amp; Gazette[**\[4\]**](#_ftn4)*. Through various merges, however, *The Inquirer* can claim that it is the oldest daily newspaper in America, even though it was technically founded years after other papers<span class="co">[</span><span class="ot">\[5\]</span><span class="co">](#_ftn5)</span>. *The</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Pennsylvania Packet* has its first issue dating back to Monday, October 28,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>1771, and through different owners and various sells, this paper became housed</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>under the same ownership as *The Inquirer[**\[6\]**](#_ftn6).* Through time, owners decided to merge papers and ended up with *The Inquirer* as the face of their ownership. \</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>The paper was under the ownership of Norvell and Walker for only six months when they sold it to Jesper Harding ---- associate editor of the *United States Gazette* and the leading publisher of the Bible in the country[\[7\]](#_ftn7). His goal was to create a publishing powerhouse ­­---- a seemingly impossible feat that soon proved to be possible. By 1842, only 13 years after becoming owner, Harding had bought four of the competing newspapers in the city and merged them with *The Inquirer*: *The Daily Journal, The Morning Journal, The Daily Courier, The National Gazette and The Literary Register[**\[8\]**](#_ftn8)*. The owner of *The* *Daily Courier*, James Gordon Bennett, would soon run off to New York and found the *New York Herald*. To keep up with the rising demand of news and the acquisition of more papers and readers, Harding built his own paper mill<span class="co">[</span><span class="ot">\[9\]</span><span class="co">](#_ftn9)</span>. Under Harding, the paper also tried to stay true to its original political ties, but that feat was soon proven difficult. Their loyalty to the Democratic party shifted after President Andrew Jackson removed all funds from the Second Bank of the U.S. in 1833 ---- a bank located in the heart of Philadelphia. After that, the paper backed the anti-Jackson wing of the Democratic party<span class="co">[</span><span class="ot">\[10\]</span><span class="co">](#_ftn10)</span>.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Following the retirement of Harding in 1860, his son, William Harding, fully took over *The Inquirer* after being a partner for a few years[\[11\]](#_ftn11). He brought immense changes to the paper within the first few years of ownership. Harding changed the paper\'s name from *The Pennsylvanian Inquirer* to *The Philadelphia Inquirer,* changed the circulation so that it went mostly to annual subscribers, cut the single-copy price from three cents to two cents and also established delivery routes for paper boys[\[12\]](#_ftn12). The paper was also one of the first in the nation to use a web fed rotary press, which allowed them to have printing on both sides of the paper[\[13\]](#_ftn13). Three years into his full ownership, the circulation for *The Inquirer*</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>had risen from 7,000 to 70,000.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Harding carried the paper through coverage in the Civil War, and the paper and its subsequent coverage proved to be huge during this time. Harding not only brought the news of the armies to readers, but he also sent *The Inquirer* to the armies[\[14\]](#_ftn14). When the government sought to tell their troops about new steps in the war, it asked *The Inquirer* to issue a special edition for its armies. Both sides of the war also read *The Inquirer* because they thought it and its reporters were the most objective[\[15\]](#_ftn15). The war also brought about one of the nation\'s all-time greatest battlefield journalists, Uriah Hunt Painter, who worked for *The Inquirer*. Painter was the one who correctly reported the Confederate win in the first Battle of Bull Run when other outlets falsely claimed a Union victory<span class="co">[</span><span class="ot">\[16\]</span><span class="co">](#_ftn16)</span>. He became known to generals and other government officials and traveled across the country at the drop of a hat to report<span class="co">[</span><span class="ot">\[17\]</span><span class="co">](#_ftn17)</span>.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Harding held ownership of the paper until 1889 when it was sold to British-born James Elverson<span class="co">[</span><span class="ot">\[18\]</span><span class="co">](#_ftn18)</span>. At this point in time, *The Inquirer* was just a memory of what it once was. Their reporting on the Civil War was a peak, but soon after the war ended their circulation dropped. Elverson purchased the paper with the intention of restoring an institution that he had admired, and he began by moving the paper into a new building with the most advanced printing resources<span class="co">[</span><span class="ot">\[19\]</span><span class="co">](#_ftn19)</span>. Elverson was also the first publisher to run his entire pressroom by electricity. In 1889, he created a Sunday edition of the paper as well.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>After Elverson died, the paper was handed down to his son, James Elverson Jr. Under his ownership, *The Inquirer* increased its \"political clout\" in the very Republican commonwealth. The paper soon became known as the \"Republican Bible of Pennsylvania\"[\[20\]](#_ftn20). This was the time when *The Inquirer* was looking to keep pace with the so-called mechanical age. It began using motor trucks to transport its paper and started to implement color printing[\[21\]](#_ftn21). Elverson Jr. was also the editor to build and move the newspaper into the building that it currently resides in, and this building was heralded as the most modern and fully equipped newspaper plant in the world[\[22\]](#_ftn22).&nbsp; Elverson Jr. died of a heart attack in *The Inquirer* building in 1929, and it took the paper seven years to find a fully defined owner after his death<span class="co">[</span><span class="ot">\[23\]</span><span class="co">](#_ftn23)</span>.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The paper went through many owners before being bought by M.L. Annenberg for \$12 million in 1936<span class="co">[</span><span class="ot">\[24\]</span><span class="co">](#_ftn24)</span>. He was considered the first \"well-known\" boss after the seven years of iffy ownership. Under Annenberg, circulation climbed immensely. The daily circulation had risen to 345,422 and its Sunday circulation rose to 1,035,871 after only two years<span class="co">[</span><span class="ot">\[25\]</span><span class="co">](#_ftn25)</span>. Annenberg, however, was soon charged with tax evasion and sent to prison. He maintained ownership until he died in 1942<span class="co">[</span><span class="ot">\[26\]</span><span class="co">](#_ftn26)</span>. Walter Annenberg, his son, quickly took over. Under him, *The Inquirer* became the sole morning publication in the city, and they announced that they were becoming an editorially independent newspaper rather than a GOP-oriented one[\[27\]](#_ftn27). In 1951, they backed the Democratic candidates in the election for Philadelphia\'s new mayor. Today, the newspaper is considered to have more of a left-leaning slant, but just slightly. In 1969, President Richard Nixon appointed Annenberg to be the Ambassador to Britain, so he decided to sell the paper to Knight Newspapers Inc.[\[28\]](#_ftn28). They held ownership until 2014 when philanthropist H.F. \"Gerry\" Lenfest purchased *The Inquirer* and donated it to the Lenfest Institute for Journalism<span class="co">[</span><span class="ot">\[29\]</span><span class="co">](#_ftn29)</span>. It is now the largest newspaper in the United States that operates as a public-benefit corporation.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Justine McDaniel flew across the country seven years ago to begin her job at *The Inquirer.* As a California native, McDaniel saw the six-hour flight and cross-country relocation as nothing but an opportunity to start her dream job. She began her work as a suburban bureau reporter until quickly moving onto the policy team where she looked at different state policies in different areas. A few years after her hiring, she became a general assignment reporter where she covered a much wider range of topics. When the pandemic hit, she was one of the first people tapped to start working on the COVID-19 beat. Her first story came out in early January, right before it had arrived in the United States, and she has</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>been working on it since.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>McDaniel acknowledged the dense history of Philadelphia as a city itself, but also of the paper.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>\"I do think there's such a strong Philadelphia culture. And, like, *The Inquirer*, you know, its history is part of that,\" she said. \"So, I guess just learning about all of that, for me has been interesting and becoming part of that. And, you know, my work definitely helps make me feel part of that.\"</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>McDaniel emphasized that the paper is so engrained into the community and also in the history of the city. There is importance, she said, in startups and smaller newspapers, but it is also important to keep papers alive, especially ones with an immense history.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>\"I do feel really lucky to work somewhere where the name is so established in the community,\" she said. \"And everyone knows *The Inquirer* and you know, it means that people understand what you're doing a lot of the time when you reach out to them or whatever. So, I feel really lucky to work somewhere with so much, you know, weight behind it.\"</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>With this established name and such rich history, McDaniel acknowledges that it makes her job easier to do. The trust that people have placed over the years into this institution makes them more willing to talk and more willing to be honest. If they trust the paper, they will trust that they will report the right way. In being around for so long it has created an open area of trust and importance in the community.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>\"There's definitely always a sense that I want to do right by the paper, because the paper is so important to me,\" she said. \"It's such a big, wonderful place with all its history.\"</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>In being around for so long though, the paper has also had to deal with an immensely changing industry. From printing on only one side of the paper to going digital, almost 200 years of history means that this paper has had to adapt to a lot. In just her seven years of working with *The Inquirer*, McDaniel has even seen drastic changes to the website. The paper has changed the way it reaches its audience and also how it presents it content, and the way they write their headlines has even changed.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>\"So, all of that kind of stuff, it's in the forefront of everyone's mind all the time. I think or at least mine, you know, when I'm working,\" McDaniel said. \"It's just kind of baked into what we do now. Rather than, you know, maybe in previous decades, it was more of like you have to think harder about it, maybe more of an afterthought. The situation was just so different.\"</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Adaption has taken place throughout its history by previous owners, by moving them into new state-of-the-art buildings or beginning to run their newsroom on full electricity, but there has been more adaptation done recently as well. The donation of *The Inquirer* to the Lenfest Institute placed both the paper and Philadelphia itself at the epicenter of a national effort to protect and transform local news in the digital age. They have also adapted to the financial hardships of keeping a paper running, as the Institute\'s work with *The Inquirer* is entirely supported by private philanthropy<span class="co">[</span><span class="ot">\[30\]</span><span class="co">](#_ftn30)</span>.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>Adaptations within the paper not only came with just technological advances, but it also came in response to the increase in attention on social issues. When covering the Black Lives Matter protests in response to the murder of George Floyd, *Inquirer* reporter Inga Saffron wrote a column titled \"Buildings Matter, Too\" ---- an apparent play on the BLM slogan[\[31\]](#_ftn31). There was outrage among both consumers and journalists within the newsroom and top editor at the time, Stan Wischnowski, stepped down soon after[\[32\]](#_ftn32). In response to this controversy, the paper has had to work on the inherent biases that come with a paper that has been around for so long and change the way they think of reporting. \"*Inquirer* for All\" was launched in response to the headline, and they have created resources, guides and tracking systems to attempt to make their work more accountable to Black, Indigenous and POC communities and journalists<span class="co">[</span><span class="ot">\[33\]</span><span class="co">](#_ftn33)</span>. An Anti-Racist Workflow Guide was also created, and it offers a series of questions for reporters, editors and producers to consider at different points in the journalistic process. In the newsroom now, 61 percent of all newsroom positions were filled by individuals from BIPOC communities and 44 percent identified as women<span class="co">[</span><span class="ot">\[34\]</span><span class="co">](#_ftn34)</span>.&nbsp;</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>As a current 16-year resident of Pennsylvania, Lauren Plocharski has become a consistent reader of *The Inquirer*. The print edition used to be brought into her office and left in the break room, and that is when she would catch up on the news for the day.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>\"It was an easy way to get my news, and I think once I started reading *The Inquirer*, it became one of the local news outlets I read consistently,\" she said. \"Besides the very local paper, it was one of the only newspapers that people ever read, or even brought into the office.\"</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Plocharski had been a long-time resident of New Jersey before moving to a Philadelphia suburb in 2005 with her husband and two daughters. Before moving, she had read local Jersey papers and sometimes papers in New York. She still read their online versions, but it was easy to find a new paper to trust when making the move.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>\"Everyone knows *The Inquirer*, some people back in New Jersey even read it,\" she said. \"They also had some reporting on New Jersey news, so it gave a sense of that old part of my life too.\"</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Now, Plocharski finds herself clicking through their website almost daily while at work and home. For her more local news she reads the *Doylestown Patch*, which is based in her suburb, but she finds that *The Inquirer* has more in-depth and broad reporting ----&nbsp;most likely due to more expansive resources. Sometimes these city-based papers can get lost in the new journalism world that is filled with</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>mega-outlets like FOX, CNN, AP and more, but to Plocharski, it is nice to see a</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>paper survive for so long.\</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>*The Inquirer* has been the recipient of multiple awards and has produced both noteworthy stories and journalists. Under Harding, they covered the Mexican War, supported Millard Fillmore in his election and also advocated for the election of President Abraham Lincoln. Many of Charles Dickens\' novels, including *Barnaby Rudge* and *Master Humphrey\'s Clock*, were also published for the first time in</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>America under *The Inquirer*\'s name[\[35\]](#_ftn35). Samuel Clemens, also better known as Mark Twain, was even a compositor in *The Inquirer*\'s back shop for a few months in the early 1850s[\[36\]](#_ftn36). Edgar Allen Poe\'s \"The Raven\" was also published in the paper on February 15,1845, as he was a resident of Philadelphia[\[37\]](#_ftn37). In 1894, *The Inquirer* advocated for the paving of Broad Street. It soon happened, and it became one of the \"world\'s finest boulevards\"<span class="co">[</span><span class="ot">\[38\]</span><span class="co">](#_ftn38)</span>. The paper also advocated for the return of a sailor to U.S. grounds so that he could be honored for his service. He was soon returned, and his coffin was placed beneath the Liberty Bell where he laid in state for 24 hours. This is said to be the nation\'s first tribute on such a scale to an enlisted man<span class="co">[</span><span class="ot">\[39\]</span><span class="co">](#_ftn39)</span>.\</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>During World War II, *The Inquirer* was represented in the fields by one of the war\'s most distinguished correspondents, Ivan H. \"Cy\" Peterman<span class="co">[</span><span class="ot">\[40\]</span><span class="co">](#_ftn40)</span>. He walked with Allied forces through France and Germany and covered the early meetings on the United Nations when it was first formed. He had continual contact with generals and leaders of the UN made him a force to be reckoned with ---- but it also game him an ego<span class="co">[</span><span class="ot">\[41\]</span><span class="co">](#_ftn41)</span>. When he was asked to return to Philadelphia and go back to his sports column, he \"balked\" and left the paper<span class="co">[</span><span class="ot">\[42\]</span><span class="co">](#_ftn42)</span>.\</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>In 1979, The Three Mile Island nuclear reactor near Middletown, Pennsylvania partially melted down after there was a failure in one of the plant\'s sections. Eighty *Inquire* reporters, editors and photographers were put on the story, and they produced a 20,000-word account in five days that ran nine full pages in the Sunday paper<span class="co">[</span><span class="ot">\[43\]</span><span class="co">](#_ftn43)</span>. This reporting won them a Pulitzer prize for local reporting. This story, however, was only one of 17 Pulitzers the paper won between the years of 1975 and 1990<span class="co">[</span><span class="ot">\[44\]</span><span class="co">](#_ftn44)</span>. Since then, they have won three more, bringing their total to 20<span class="co">[</span><span class="ot">\[45\]</span><span class="co">](#_ftn45)</span>.\</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>Their award-winning is not just limited to Pulitzer\'s though, as *The</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>Inquirer* has won more national journalism awards than any other newspaper</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>in the country. Other awards include the Roy W. Howard Award, the Ernie Pyle</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>Memorial Award, the University of Missouri Medal, the Robert Kennedy Award for</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>Photojournalism, the National Headliners Award, the Thomas L. Stokes Award, the</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>George Polk Award, the Heywood Broun Award, the George Loeb Award and numerous awards in different categories from the Society of Profession Journalists<span class="co">[</span><span class="ot">\[46\]</span><span class="co">](#_ftn46)</span>.\</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Through its rich and vast history, *The Inquirer* has proven itself to be a prominent and important institution. It has adapted to the changing journalism industry and is working to better itself in the changing climate. In its almost 200 years of existence, this paper has covered major events through U.S. History and has been a constant for the community members of Philadelphia and its surrounding suburbs. *The Inquirer* is an example of where good and trustworthy reporting can take a paper, and its leadership and drive has allowed it to thrive to the present time. &nbsp;</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="sc">\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Citations:</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[1\]</span><span class="co">](#_ftnref1)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[2\]</span><span class="co">](#_ftnref2)</span> ibid</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[3\]</span><span class="co">](#_ftnref3)</span> ibid</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[4\]</span><span class="co">](#_ftnref4)</span> Williams, Edgar. \"A history of The Inquirer,\" Philly.com,</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[5\]</span><span class="co">](#_ftnref5)</span> Wilkinson, Gerry. \"The History of the Philadelphia</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Inquirer,\" The Philadelphia Press Association. DOA 12/10/2021</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>http://www.phillyppa.com/inquirer.html</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[6\]</span><span class="co">](#_ftnref6)</span> ibid</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[7\]</span><span class="co">](#_ftnref7)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[8\]</span><span class="co">](#_ftnref8)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[9\]</span><span class="co">](#_ftnref9)</span> ibid</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[10\]</span><span class="co">](#_ftnref10)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[11\]</span><span class="co">](#_ftnref11)</span> ibid</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[12\]</span><span class="co">](#_ftnref12)</span> ibid</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[13\]</span><span class="co">](#_ftnref13)</span> Wilkinson, Gerry. \"The History of the Philadelphia</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>Inquirer,\" The Philadelphia Press Association. DOA 12/10/2021 http://www.phillyppa.com/inquirer.html</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[14\]</span><span class="co">](#_ftnref14)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[15\]</span><span class="co">](#_ftnref15)</span> ibid</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[16\]</span><span class="co">](#_ftnref16)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[17\]</span><span class="co">](#_ftnref17)</span> Williams, Edgar. \"A history of The Inquirer,\" Philly.com,</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[18\]</span><span class="co">](#_ftnref18)</span> ibid</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[19\]</span><span class="co">](#_ftnref19)</span> ibid</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[20\]</span><span class="co">](#_ftnref20)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[21\]</span><span class="co">](#_ftnref21)</span> ibid</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[22\]</span><span class="co">](#_ftnref22)</span> Wilkinson, Gerry. \"The History of the Philadelphia</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>Inquirer,\" The Philadelphia Press Association. DOA 12/10/2021</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>http://www.phillyppa.com/inquirer.html</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[23\]</span><span class="co">](#_ftnref23)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[24\]</span><span class="co">](#_ftnref24)</span> Wilkinson, Gerry. \"The History of the Philadelphia</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>Inquirer,\" The Philadelphia Press Association. DOA 12/10/2021</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>http://www.phillyppa.com/inquirer.html</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[25\]</span><span class="co">](#_ftnref25)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[26\]</span><span class="co">](#_ftnref26)</span> ibid</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[27\]</span><span class="co">](#_ftnref27)</span> ibid</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[28\]</span><span class="co">](#_ftnref28)</span> Wilkinson, Gerry. \"The History of the Philadelphia</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>Inquirer,\" The Philadelphia Press Association. DOA 12/10/2021</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>http://www.phillyppa.com/inquirer.html</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[29\]</span><span class="co">](#_ftnref29)</span> \"The Philadelphia Inquirer,\" The Lenfest Institute.</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>DOA 12/11/2021 https://www.lenfestinstitute.org/inquirer-support/</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[30\]</span><span class="co">](#_ftnref30)</span> \"The Philadelphia Inquirer,\" The Lenfest Institute.</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>DOA 12/11/2021 https://www.lenfestinstitute.org/inquirer-support/</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[31\]</span><span class="co">](#_ftnref31)</span> Wenzel, Andrea. \"The Philadelphia Inquirer is working</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>to transform its newsroom. Here\'s what it\'s done in a year,\" Poynter, August</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>27, 2021. DOA 12/10/2021</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>https://www.poynter.org/reporting-editing/2021/the-philadelphia-inquirer-is-working-to-transform-its-newsroom-heres-what-its-done-in-a-year/</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[32\]</span><span class="co">](#_ftnref32)</span> Tracy, Marc. \"Top Editor of Philadelphia Inquirer</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>Resigns After \'Buildings Matter\' Headline,\" The New York Times, June 6, 2020.</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>DOA 12/11/2021</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>https://www.nytimes.com/2020/06/06/business/media/editor-philadephia-inquirer-resigns.html</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[33\]</span><span class="co">](#_ftnref33)</span> Wenzel, Andrea. \"The Philadelphia Inquirer is</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>working to transform its newsroom. Here\'s what it\'s done in a year,\" Poynter,</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>August 27, 2021. DOA 12/10/2021</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>https://www.poynter.org/reporting-editing/2021/the-philadelphia-inquirer-is-working-to-transform-its-newsroom-heres-what-its-done-in-a-year/</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[34\]</span><span class="co">](#_ftnref34)</span> ibid</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[35\]</span><span class="co">](#_ftnref35)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[36\]</span><span class="co">](#_ftnref36)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[37\]</span><span class="co">](#_ftnref37)</span> Wilkinson, Gerry. \"The History of the Philadelphia</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>Inquirer,\" The Philadelphia Press Association. DOA 12/10/2021</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>http://www.phillyppa.com/inquirer.html</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[38\]</span><span class="co">](#_ftnref38)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[39\]</span><span class="co">](#_ftnref39)</span> ibid</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[40\]</span><span class="co">](#_ftnref40)</span> ibid</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[41\]</span><span class="co">](#_ftnref41)</span> ibid</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[42\]</span><span class="co">](#_ftnref42)</span> ibid</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[43\]</span><span class="co">](#_ftnref43)</span> ibid</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[44\]</span><span class="co">](#_ftnref44)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021 https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[45\]</span><span class="co">](#_ftnref45)</span> \"The Philadelphia Inquirer,\" Wikipedia. DOA</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>12/11/2021 https://en.wikipedia.org/wiki/The_Philadelphia_Inquirer</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">\[46\]</span><span class="co">](#_ftnref46)</span> Williams, Edgar. \"A history of The Inquirer,\"</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>Philly.com, June 20, 2003. DOA 12/10/2021</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>https://web.archive.org/web/20070219044935/http://www.philly.com/mld/inquirer/news/local/6135296.htm?1c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Amanda Plocharski</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
