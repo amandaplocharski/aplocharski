@@ -4105,7 +4105,7 @@ date  (3): date_exact, date_approx_month, date_comb
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<p>These next few questins will deal with grouping. We will first take a look at how many members in the dataset did not favor impeachment come from districts with a GDP that is above the national figure versus below.</p>
+<p>These next few questions will deal with grouping. We will first take a look at how many members in the dataset did not favor impeachment come from districts with a GDP that is above the national figure versus below. We will use the “group_by” function to aggregate the “for_impeachment” column from the dataset. Then we are going to usee the “filter” function to say that in that aggregated “for_impeachment” column, we only want data from people who voted no for impeachment, and then those with a GDP above national. The same exact steps are followed in the code below it, only this time, filtering for a GDP below national.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4134,7 +4134,7 @@ date  (3): date_exact, date_approx_month, date_comb
 1 NO                 19</code></pre>
 </div>
 </div>
-<p>Still using grouping, we are breaking down the members of Congress by two measures: those who are for or against impeachment and districts above/below national GDP.</p>
+<p>Still using the grouping function, we are now breaking down the members of Congress by two measures: those who are for or against impeachment and districts above/below national GDP. To do this, we are going to use the “count” function, which will give us a table laying out all of the possible variations of for or against impeachment and above or below national GDP and how many people in the datatset fall into each category.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4153,7 +4153,7 @@ date  (3): date_exact, date_approx_month, date_comb
 4 YES             BELOW                 83</code></pre>
 </div>
 </div>
-<p>Similar to the code above, we are now looking at the national average percent of college graduates instead of GDP.</p>
+<p>Exactly like the code above, we are now looking at the national average percent of college graduates instead of GDP. This time, instead of “gdp_above_national” in the count function, we are going to use the “pct_bachelors_compared_to_national” column from the dataset.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4172,15 +4172,14 @@ date  (3): date_exact, date_approx_month, date_comb
 4 YES             BELOW                                 81</code></pre>
 </div>
 </div>
-<p>Now, instead of showing the above/below national average counts for those for or against impeachment, we are now finding the combined MEAN percentage of college grads for districts that are Yes for impeachment vs. No. </p>
+<p>Now, instead of showing the above/below national average counts for those for or against impeachment, we are now finding the combined MEAN percentage of college grads for districts that are Yes for impeachment vs. No. To do this, we are using the “filter” function to only find those from the dataset that voted “YES” for impeachment, and are aggregating that data with the “group_by” function. The “summarise” function does as sounds, and is going to take that “pct_bachelors” column and find the mean, and is going to give us our mean of college graduates who voted yed for impeachment.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>  impeach <span class="sc">%&gt;%</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(for_impeachment) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">college_grad =</span> <span class="fu">mean</span>(pct_bachelors)) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(college_grad))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">college_grad =</span> <span class="fu">mean</span>(pct_bachelors)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
@@ -4189,7 +4188,7 @@ date  (3): date_exact, date_approx_month, date_comb
 1 YES                     33.7</code></pre>
 </div>
 </div>
-<p>Similar to above, we are now looking at the combined mean percentage of the vote that Donald Trump received for districts that are Yes for impeachment vs. No</p>
+<p>Similar to above, we are now looking at the combined mean percentage of the vote that Donald Trump received for districts that are Yes for impeachment vs. No. Again, we are taking the “filter” function to pull only people who voted either “YES” or “NO” to impeachment, and then using the “grouping” function to aggregate results. We use “summarise” and “mean” to find the mean vote that Trump got during his 2016 election in the districts that either voted no or yes to impeachment.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4218,74 +4217,36 @@ date  (3): date_exact, date_approx_month, date_comb
 1 NO                      43.8</code></pre>
 </div>
 </div>
-<p>Finally, using filtering, we are now looking for the members who are a yes for impeachment, then of those, how many won their 2018 election by less than 5 percentage points (margin_flag_2018) vs. more.</p>
+<p>Finally, we are now looking for the members who are a yes for impeachment, then of those, how many won their 2018 election by less than 5 percentage points (margin_flag_2018) vs. more.</p>
+<p>To do this, we are using “group_by” to aggregate the data from the “for_impeachment” data, and then using the “filter” function to find only the data of those who voted “YES” to impeachment and those that won their 2018 election by less than 5 percentage points. We then use the “summarise” function to give us the total number of those who voted “YES” to impeachment and who won their race by less than 5 points instead of R giving us a list of all the raw data. The same thing is done to find those who were a “YES” for impeachment and won by more than five percentage points, just switching out for the correct points value in the “filter” function.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>  impeach <span class="sc">%&gt;%</span> </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(for_impeachment)<span class="sc">%&gt;%</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>,</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>          margin_flag_2018 <span class="sc">==</span> <span class="st">&quot;5_points_or_less&quot;</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>          margin_flag_2018 <span class="sc">==</span> <span class="st">&quot;5_points_or_less&quot;</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 17 × 32
-# Groups:   for_impeachment [1]
-   for_impea…¹ last_…² first…³ middl…⁴ party state distr…⁵ date_exact date_app…⁶
-   &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;date&gt;     &lt;date&gt;    
- 1 YES         Axne    Cynthia &lt;NA&gt;    D     IA    3       2019-09-24 NA        
- 2 YES         Castor  Kathy   &lt;NA&gt;    D     FL    14      2019-09-24 NA        
- 3 YES         Cisner… Gilbert &lt;NA&gt;    D     CA    39      2019-09-23 NA        
- 4 YES         Cox     TJ      &lt;NA&gt;    D     CA    21      2019-09-24 NA        
- 5 YES         Demings Val     &lt;NA&gt;    D     FL    10      2019-05-21 NA        
- 6 YES         Fletch… Lizzie  &lt;NA&gt;    D     TX    7       2019-09-24 NA        
- 7 YES         Frankel Lois    &lt;NA&gt;    D     FL    21      2019-09-24 NA        
- 8 YES         Harder  Josh    &lt;NA&gt;    D     CA    10      2019-09-24 NA        
- 9 YES         Kim     Andy    &lt;NA&gt;    D     NJ    3       2019-09-24 NA        
-10 YES         Luria   Elaine  &lt;NA&gt;    D     VA    2       2019-09-23 NA        
-11 YES         Malino… Tom     &lt;NA&gt;    D     NJ    7       2019-05-29 NA        
-12 YES         Mucars… Debbie  &lt;NA&gt;    D     FL    26      2019-06-21 NA        
-13 YES         Porter  Katie   &lt;NA&gt;    D     CA    45      2019-06-17 NA        
-14 YES         Schrier Kim     &lt;NA&gt;    D     WA    8       2019-07-28 NA        
-15 YES         Slotkin Elissa  &lt;NA&gt;    D     MI    8       2019-09-23 NA        
-16 YES         Spanbe… Abigail &lt;NA&gt;    D     VA    7       2019-09-23 NA        
-17 YES         Underw… Lauren  &lt;NA&gt;    D     IL    14      2019-08-20 NA        
-# … with 23 more variables: date_comb &lt;date&gt;, date_month &lt;dbl&gt;,
-#   date_year &lt;dbl&gt;, margin_flag_2018 &lt;chr&gt;, flip_2018 &lt;chr&gt;, house_dist &lt;chr&gt;,
-#   keyrace_rating &lt;chr&gt;, median_income &lt;dbl&gt;,
-#   median_income_compared_to_national &lt;chr&gt;, median_age &lt;dbl&gt;,
-#   median_age_compared_to_national &lt;chr&gt;, pct_nonwhite &lt;dbl&gt;,
-#   pct_nonwhite_compared_to_national &lt;chr&gt;, pct_bachelors &lt;dbl&gt;,
-#   pct_bachelors_compared_to_national &lt;chr&gt;, rural_pop_above20pct &lt;chr&gt;, …</code></pre>
+<pre><code># A tibble: 1 × 2
+  for_impeachment `n()`
+  &lt;chr&gt;           &lt;int&gt;
+1 YES                17</code></pre>
 </div>
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a> impeach <span class="sc">%&gt;%</span> </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(for_impeachment)<span class="sc">%&gt;%</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>,</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>          margin_flag_2018 <span class="sc">==</span> <span class="st">&quot;more_than_5_points&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>          margin_flag_2018 <span class="sc">==</span> <span class="st">&quot;more_than_5_points&quot;</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">summarise</span>(<span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 192 × 32
-# Groups:   for_impeachment [1]
-   for_impea…¹ last_…² first…³ middl…⁴ party state distr…⁵ date_exact date_app…⁶
-   &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;date&gt;     &lt;date&gt;    
- 1 YES         Adams   Alma    &lt;NA&gt;    D     NC    12      2019-05-31 NA        
- 2 YES         Aguilar Pete    &lt;NA&gt;    D     CA    31      2019-08-01 NA        
- 3 YES         Barrag… Nanette &lt;NA&gt;    D     CA    44      NA         2019-06-01
- 4 YES         Bass    Karen   &lt;NA&gt;    D     CA    37      2019-09-24 NA        
- 5 YES         Beatty  Joyce   &lt;NA&gt;    D     OH    3       2019-05-31 NA        
- 6 YES         Bera    Ami     &lt;NA&gt;    D     CA    7       2019-09-24 NA        
- 7 YES         Beyer   Donald  &lt;NA&gt;    D     VA    8       NA         2019-05-01
- 8 YES         Bishop  Sanford D.      D     GA    2       2019-09-24 NA        
- 9 YES         Blumen… Earl    &lt;NA&gt;    D     OR    3       2019-05-03 NA        
-10 YES         Blunt … Lisa    &lt;NA&gt;    D     DE    At-Lar… 2019-07-25 NA        
-# … with 182 more rows, 23 more variables: date_comb &lt;date&gt;, date_month &lt;dbl&gt;,
-#   date_year &lt;dbl&gt;, margin_flag_2018 &lt;chr&gt;, flip_2018 &lt;chr&gt;, house_dist &lt;chr&gt;,
-#   keyrace_rating &lt;chr&gt;, median_income &lt;dbl&gt;,
-#   median_income_compared_to_national &lt;chr&gt;, median_age &lt;dbl&gt;,
-#   median_age_compared_to_national &lt;chr&gt;, pct_nonwhite &lt;dbl&gt;,
-#   pct_nonwhite_compared_to_national &lt;chr&gt;, pct_bachelors &lt;dbl&gt;,
-#   pct_bachelors_compared_to_national &lt;chr&gt;, rural_pop_above20pct &lt;chr&gt;, …</code></pre>
+<pre><code># A tibble: 1 × 2
+  for_impeachment `n()`
+  &lt;chr&gt;           &lt;int&gt;
+1 YES               192</code></pre>
 </div>
 </div>
 
@@ -4466,7 +4427,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>impeach <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vRh8d5JaDqBtByzNw2JZF3idaACobDhhk-p7chJoktA0HawELHFOvjQOqCpzGA4MGONvPlR7GASqW-K/pub?gid=1765341510&amp;single=true&amp;output=csv&quot;</span>)</span>
 <span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>These next few questins will deal with grouping. We will first take a look at how many members in the dataset did not favor impeachment come from districts with a GDP that is above the national figure versus below. </span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>These next few questions will deal with grouping. We will first take a look at how many members in the dataset did not favor impeachment come from districts with a GDP that is above the national figure versus below. We will use the &quot;group_by&quot; function to aggregate the &quot;for_impeachment&quot; column from the dataset. Then we are going to usee the &quot;filter&quot; function to say that in that aggregated &quot;for_impeachment&quot; column, we only want data from people who voted no for impeachment, and then those with a GDP above national. The same exact steps are followed in the code below it, only this time, filtering for a GDP below national.</span>
 <span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>impeach <span class="sc">%&gt;%</span> </span>
 <span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(for_impeachment) <span class="sc">%&gt;%</span> </span>
@@ -4479,14 +4440,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">n</span>())</span>
 <span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>Still using grouping, we are breaking down the members of Congress by two measures: those who are for or against impeachment and districts above/below national GDP.</span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>Still using the grouping function, we are now breaking down the members of Congress by two measures: those who are for or against impeachment and districts above/below national GDP. To do this, we are going to use the &quot;count&quot; function, which will give us a table laying out all of the possible variations of for or against impeachment and above or below national GDP and how many people in the datatset fall into each category.</span>
 <span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>impeach <span class="sc">%&gt;%</span> </span>
 <span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(for_impeachment)<span class="sc">%&gt;%</span></span>
 <span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(for_impeachment, gdp_above_national)</span>
 <span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>Similar to the code above, we are now looking at the national average percent of college graduates instead of GDP.</span>
+<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>Exactly like the code above, we are now looking at the national average percent of college graduates instead of GDP. This time, instead of &quot;gdp_above_national&quot; in the count function, we are going to use the &quot;pct_bachelors_compared_to_national&quot; column from the dataset.</span>
 <span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a>impeach <span class="sc">%&gt;%</span> </span>
 <span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(for_impeachment)<span class="sc">%&gt;%</span></span>
@@ -4495,41 +4456,44 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a>Now, instead of showing the above/below national average counts for those for or </span>
 <span id="cb25-62"><a href="#cb25-62" aria-hidden="true" tabindex="-1"></a>against impeachment, we are now finding the combined MEAN percentage of college</span>
-<span id="cb25-63"><a href="#cb25-63" aria-hidden="true" tabindex="-1"></a>grads for districts that are Yes for impeachment vs. No. </span>
+<span id="cb25-63"><a href="#cb25-63" aria-hidden="true" tabindex="-1"></a>grads for districts that are Yes for impeachment vs. No. To do this, we are using the &quot;filter&quot; function to only find those from the dataset that voted &quot;YES&quot; for impeachment, and are aggregating that data with the &quot;group_by&quot; function. The &quot;summarise&quot; function does as sounds, and is going to take that &quot;pct_bachelors&quot; column and find the mean, and is going to give us our mean of college graduates who voted yed for impeachment. </span>
 <span id="cb25-66"><a href="#cb25-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb25-67"><a href="#cb25-67" aria-hidden="true" tabindex="-1"></a>  impeach <span class="sc">%&gt;%</span> </span>
 <span id="cb25-68"><a href="#cb25-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb25-69"><a href="#cb25-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(for_impeachment) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-70"><a href="#cb25-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">college_grad =</span> <span class="fu">mean</span>(pct_bachelors)) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-71"><a href="#cb25-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(college_grad))</span>
-<span id="cb25-72"><a href="#cb25-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-73"><a href="#cb25-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-74"><a href="#cb25-74" aria-hidden="true" tabindex="-1"></a>Similar to above, we are now looking at the combined mean percentage of </span>
-<span id="cb25-75"><a href="#cb25-75" aria-hidden="true" tabindex="-1"></a>the vote that Donald Trump received for districts that are Yes for impeachment vs. No</span>
-<span id="cb25-78"><a href="#cb25-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-79"><a href="#cb25-79" aria-hidden="true" tabindex="-1"></a> impeach <span class="sc">%&gt;%</span> </span>
-<span id="cb25-80"><a href="#cb25-80" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-81"><a href="#cb25-81" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(for_impeachment) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-82"><a href="#cb25-82" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">average_vote =</span> <span class="fu">mean</span>(trump_percent)) </span>
-<span id="cb25-83"><a href="#cb25-83" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb25-84"><a href="#cb25-84" aria-hidden="true" tabindex="-1"></a> impeach <span class="sc">%&gt;%</span> </span>
-<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;NO&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-86"><a href="#cb25-86" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(for_impeachment) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-87"><a href="#cb25-87" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarise</span>(<span class="at">average_vote =</span> <span class="fu">mean</span>(trump_percent))</span>
-<span id="cb25-88"><a href="#cb25-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-89"><a href="#cb25-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-90"><a href="#cb25-90" aria-hidden="true" tabindex="-1"></a>Finally, using filtering, we are now looking for the members who are a yes for impeachment, then of those, how many won their 2018 election by less than 5 percentage points (margin_flag_2018) vs. more.</span>
-<span id="cb25-93"><a href="#cb25-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-94"><a href="#cb25-94" aria-hidden="true" tabindex="-1"></a>  impeach <span class="sc">%&gt;%</span> </span>
-<span id="cb25-95"><a href="#cb25-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(for_impeachment)<span class="sc">%&gt;%</span></span>
-<span id="cb25-96"><a href="#cb25-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>,</span>
-<span id="cb25-97"><a href="#cb25-97" aria-hidden="true" tabindex="-1"></a>          margin_flag_2018 <span class="sc">==</span> <span class="st">&quot;5_points_or_less&quot;</span>) </span>
-<span id="cb25-98"><a href="#cb25-98" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb25-99"><a href="#cb25-99" aria-hidden="true" tabindex="-1"></a> impeach <span class="sc">%&gt;%</span> </span>
-<span id="cb25-100"><a href="#cb25-100" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(for_impeachment)<span class="sc">%&gt;%</span></span>
-<span id="cb25-101"><a href="#cb25-101" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>,</span>
-<span id="cb25-102"><a href="#cb25-102" aria-hidden="true" tabindex="-1"></a>          margin_flag_2018 <span class="sc">==</span> <span class="st">&quot;more_than_5_points&quot;</span>)</span>
-<span id="cb25-103"><a href="#cb25-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-70"><a href="#cb25-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">college_grad =</span> <span class="fu">mean</span>(pct_bachelors)) </span>
+<span id="cb25-71"><a href="#cb25-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-72"><a href="#cb25-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-73"><a href="#cb25-73" aria-hidden="true" tabindex="-1"></a>Similar to above, we are now looking at the combined mean percentage of </span>
+<span id="cb25-74"><a href="#cb25-74" aria-hidden="true" tabindex="-1"></a>the vote that Donald Trump received for districts that are Yes for impeachment vs. No. Again, we are taking the &quot;filter&quot; function to pull only people who voted either &quot;YES&quot; or &quot;NO&quot; to impeachment, and then using the &quot;grouping&quot; function to aggregate results. We use &quot;summarise&quot; and &quot;mean&quot; to find the mean vote that Trump got during his 2016 election in the districts that either voted no or yes to impeachment. </span>
+<span id="cb25-77"><a href="#cb25-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-78"><a href="#cb25-78" aria-hidden="true" tabindex="-1"></a> impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb25-79"><a href="#cb25-79" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-80"><a href="#cb25-80" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(for_impeachment) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-81"><a href="#cb25-81" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">average_vote =</span> <span class="fu">mean</span>(trump_percent)) </span>
+<span id="cb25-82"><a href="#cb25-82" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb25-83"><a href="#cb25-83" aria-hidden="true" tabindex="-1"></a> impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb25-84"><a href="#cb25-84" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;NO&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-85"><a href="#cb25-85" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(for_impeachment) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-86"><a href="#cb25-86" aria-hidden="true" tabindex="-1"></a>   <span class="fu">summarise</span>(<span class="at">average_vote =</span> <span class="fu">mean</span>(trump_percent))</span>
+<span id="cb25-87"><a href="#cb25-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-88"><a href="#cb25-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-89"><a href="#cb25-89" aria-hidden="true" tabindex="-1"></a>Finally, we are now looking for the members who are a yes for impeachment, then of those, how many won their 2018 election by less than 5 percentage points (margin_flag_2018) vs. more.</span>
+<span id="cb25-90"><a href="#cb25-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-91"><a href="#cb25-91" aria-hidden="true" tabindex="-1"></a>To do this, we are using &quot;group_by&quot; to aggregate the data from the &quot;for_impeachment&quot; data, and then using the &quot;filter&quot; function to find only the data of those who voted &quot;YES&quot; to impeachment and those that won their 2018 election by less than 5 percentage points. We then use the &quot;summarise&quot; function to give us the total number of those who voted &quot;YES&quot; to impeachment and who won their race by less than 5 points instead of R giving us a list of all the raw data. The same thing is done to find those who were a &quot;YES&quot; for impeachment and won by more than five percentage points, just switching out for the correct points value in the &quot;filter&quot; function.</span>
+<span id="cb25-94"><a href="#cb25-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-95"><a href="#cb25-95" aria-hidden="true" tabindex="-1"></a>  impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb25-96"><a href="#cb25-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(for_impeachment)<span class="sc">%&gt;%</span></span>
+<span id="cb25-97"><a href="#cb25-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>,</span>
+<span id="cb25-98"><a href="#cb25-98" aria-hidden="true" tabindex="-1"></a>          margin_flag_2018 <span class="sc">==</span> <span class="st">&quot;5_points_or_less&quot;</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb25-99"><a href="#cb25-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">n</span>())</span>
+<span id="cb25-100"><a href="#cb25-100" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb25-101"><a href="#cb25-101" aria-hidden="true" tabindex="-1"></a> impeach <span class="sc">%&gt;%</span> </span>
+<span id="cb25-102"><a href="#cb25-102" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(for_impeachment)<span class="sc">%&gt;%</span></span>
+<span id="cb25-103"><a href="#cb25-103" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(for_impeachment <span class="sc">==</span> <span class="st">&quot;YES&quot;</span>,</span>
+<span id="cb25-104"><a href="#cb25-104" aria-hidden="true" tabindex="-1"></a>          margin_flag_2018 <span class="sc">==</span> <span class="st">&quot;more_than_5_points&quot;</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb25-105"><a href="#cb25-105" aria-hidden="true" tabindex="-1"></a>     <span class="fu">summarise</span>(<span class="fu">n</span>())</span>
+<span id="cb25-106"><a href="#cb25-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -21,7 +21,7 @@ Here is where we will load our impeachment data.
 impeach <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRh8d5JaDqBtByzNw2JZF3idaACobDhhk-p7chJoktA0HawELHFOvjQOqCpzGA4MGONvPlR7GASqW-K/pub?gid=1765341510&single=true&output=csv")
 ```
 
-These next few questins will deal with grouping. We will first take a look at how many members in the dataset did not favor impeachment come from districts with a GDP that is above the national figure versus below. 
+These next few questions will deal with grouping. We will first take a look at how many members in the dataset did not favor impeachment come from districts with a GDP that is above the national figure versus below. We will use the "group_by" function to aggregate the "for_impeachment" column from the dataset. Then we are going to usee the "filter" function to say that in that aggregated "for_impeachment" column, we only want data from people who voted no for impeachment, and then those with a GDP above national. The same exact steps are followed in the code below it, only this time, filtering for a GDP below national.
 ```{r}
 
 impeach %>% 
@@ -35,7 +35,7 @@ impeach %>%
   summarise(n())
 ```
 
-Still using grouping, we are breaking down the members of Congress by two measures: those who are for or against impeachment and districts above/below national GDP.
+Still using the grouping function, we are now breaking down the members of Congress by two measures: those who are for or against impeachment and districts above/below national GDP. To do this, we are going to use the "count" function, which will give us a table laying out all of the possible variations of for or against impeachment and above or below national GDP and how many people in the datatset fall into each category.
 ```{r}
 
 impeach %>% 
@@ -43,7 +43,7 @@ impeach %>%
   count(for_impeachment, gdp_above_national)
 ```
 
-Similar to the code above, we are now looking at the national average percent of college graduates instead of GDP.
+Exactly like the code above, we are now looking at the national average percent of college graduates instead of GDP. This time, instead of "gdp_above_national" in the count function, we are going to use the "pct_bachelors_compared_to_national" column from the dataset.
 ```{r}
 
 impeach %>% 
@@ -53,18 +53,17 @@ impeach %>%
 
 Now, instead of showing the above/below national average counts for those for or 
 against impeachment, we are now finding the combined MEAN percentage of college
-grads for districts that are Yes for impeachment vs. No. 
+grads for districts that are Yes for impeachment vs. No. To do this, we are using the "filter" function to only find those from the dataset that voted "YES" for impeachment, and are aggregating that data with the "group_by" function. The "summarise" function does as sounds, and is going to take that "pct_bachelors" column and find the mean, and is going to give us our mean of college graduates who voted yed for impeachment. 
 ```{r}
 
   impeach %>% 
     filter(for_impeachment == "YES") %>% 
     group_by(for_impeachment) %>% 
-    summarise(college_grad = mean(pct_bachelors)) %>% 
-    arrange(desc(college_grad))
+    summarise(college_grad = mean(pct_bachelors)) 
 ```
 
 Similar to above, we are now looking at the combined mean percentage of 
-the vote that Donald Trump received for districts that are Yes for impeachment vs. No
+the vote that Donald Trump received for districts that are Yes for impeachment vs. No. Again, we are taking the "filter" function to pull only people who voted either "YES" or "NO" to impeachment, and then using the "grouping" function to aggregate results. We use "summarise" and "mean" to find the mean vote that Trump got during his 2016 election in the districts that either voted no or yes to impeachment. 
 ```{r}
  impeach %>% 
     filter(for_impeachment == "YES") %>% 
@@ -77,16 +76,20 @@ the vote that Donald Trump received for districts that are Yes for impeachment v
    summarise(average_vote = mean(trump_percent))
 ```
 
-Finally, using filtering, we are now looking for the members who are a yes for impeachment, then of those, how many won their 2018 election by less than 5 percentage points (margin_flag_2018) vs. more.
+Finally, we are now looking for the members who are a yes for impeachment, then of those, how many won their 2018 election by less than 5 percentage points (margin_flag_2018) vs. more.
+
+To do this, we are using "group_by" to aggregate the data from the "for_impeachment" data, and then using the "filter" function to find only the data of those who voted "YES" to impeachment and those that won their 2018 election by less than 5 percentage points. We then use the "summarise" function to give us the total number of those who voted "YES" to impeachment and who won their race by less than 5 points instead of R giving us a list of all the raw data. The same thing is done to find those who were a "YES" for impeachment and won by more than five percentage points, just switching out for the correct points value in the "filter" function.
 ```{r}
   impeach %>% 
   group_by(for_impeachment)%>%
   filter(for_impeachment == "YES",
-          margin_flag_2018 == "5_points_or_less") 
+          margin_flag_2018 == "5_points_or_less")%>%
+  summarise(n())
  
  impeach %>% 
    group_by(for_impeachment)%>%
    filter(for_impeachment == "YES",
-          margin_flag_2018 == "more_than_5_points")
+          margin_flag_2018 == "more_than_5_points")%>%
+     summarise(n())
 ```
 
