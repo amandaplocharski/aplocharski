@@ -22,7 +22,7 @@ website:
        - analysis.qmd
        - academic_example.qmd
        - news_story.qmd
-       - analysis_va.qmd
+       - walkthrough.qmd
 
 format:
   html:
