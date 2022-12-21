@@ -144,7 +144,7 @@
     "href": "walkthrough.html",
     "title": "Virginia Election Project",
     "section": "",
-    "text": "Code\n## In order to allow people to interact with the entire dataset, we are creating an interactive table. To do this, we use the package \"DT.\" In the parentheses is the dataset name (joined_vacomparison), rownames = FALSE which removes the row names with numbers that are automatically assigned to data, and filter = \"top\" puts the filter option on the top of the table.\n\nDT::datatable(joined_vacomparison, \n              rownames = FALSE, \n              filter = \"top\")"
+    "text": "For this dataset, we will be looking at data from the VA governor race between Youngkin and McAuliffe, as well as results from the 2020 presidential election. This walkthrough will help with learning functions, charts and tables in R. First, we will load our packages and the dataset."
   },
   {
     "objectID": "walkthrough.html#comparing-virginia-governor-vs.-president",

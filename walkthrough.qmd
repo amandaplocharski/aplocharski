@@ -10,7 +10,7 @@ format:
     code-fold: true
 ---
 
-## For this dataset, we will be looking at data from the VA governor race as well as results from the 2020 presidential election. First, we will load our packages and the dataset.
+For this dataset, we will be looking at data from the VA governor race between Youngkin and McAuliffe, as well as results from the 2020 presidential election. This walkthrough will help with learning functions, charts and tables in R. First, we will load our packages and the dataset.
 
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE}
 
