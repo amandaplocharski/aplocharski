@@ -21,7 +21,7 @@ Here is where we will load our impeachment data.
 impeach <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRh8d5JaDqBtByzNw2JZF3idaACobDhhk-p7chJoktA0HawELHFOvjQOqCpzGA4MGONvPlR7GASqW-K/pub?gid=1765341510&single=true&output=csv")
 ```
 
-These next few questions will deal with grouping. We will first take a look at how many members in the dataset did not favor impeachment come from districts with a GDP that is above the national figure versus below. We will use the "group_by" function to aggregate the "for_impeachment" column from the dataset. Then we are going to usee the "filter" function to say that in that aggregated "for_impeachment" column, we only want data from people who voted no for impeachment, and then those with a GDP above national. The same exact steps are followed in the code below it, only this time, filtering for a GDP below national.
+These next few questions will deal with grouping. We will first take a look at how many members in the dataset did not favor impeachment come from districts with a GDP that is above the national figure versus below. We will use the "group_by" function to aggregate the "for_impeachment" column from the dataset. Then we are going to use the "filter" function to say that in that aggregated "for_impeachment" column, we only want data from people who voted no for impeachment, and then those with a GDP above national. The same exact steps are followed in the code below it, only this time, filtering for a GDP below national.
 ```{r}
 
 impeach %>% 

@@ -2,8 +2,8 @@
 title: "About"
 ---
 
-About this site
+Hi, welcome to my about page! My name is Amanda, and I am a current senior at The George Washington University in Washington D.C. in their School of Media and Public Affairs. 
 
-```{r}
-1 + 1
+This website was created for my Reporting in the Digital Age Class, where we learned how to use R, Quarto and implement data visualization techniques. Included on this website are two walkthroughs from class projects, my resume, work I have done with the newspaper here at school, and papers and news stories I have written for other classes. 
+
 ```
